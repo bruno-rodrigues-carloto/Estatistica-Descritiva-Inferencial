@@ -7,7 +7,7 @@ import streamlit as st
 st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Calculadora de Intervalo de Confiança de inadimplentes</h1>", unsafe_allow_html=True)
 
 #Indicando do que se trata a web app
-foto = Image.open('bruno_carloto.jpg')
+foto = Image.open('IC_Inadimplencia/bruno_carloto.jpg')
 st.sidebar.image(foto, use_column_width=True)
 st.sidebar.subheader('Bruno Rodrigues Carloto')
 st.sidebar.markdown('Analista de dados e Política de Crédito')
