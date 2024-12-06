@@ -51,7 +51,7 @@ else:
     Z_nivel_95 = 1.96
     Z_nivel_99 = 2.576
 
-    if tamanho_amostra < 1:
+    if tamanho_populacao < 1:
         st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
         st.write("Volume populacional desconhecido.")
         
