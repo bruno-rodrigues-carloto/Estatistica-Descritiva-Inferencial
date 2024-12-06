@@ -36,8 +36,8 @@ if tamanho_amostra_convertido == 0:
 else:
     st.write(f'''
     __Volume amostral:__ {tamanho_amostra}
-
-    
+    __Volume amostral convertido:__ {tamanho_amostra_convertido}
+    __Inadimplência amostral convertido:__ {inad_positivo * 100}%
     
     ''')
     # Calculando erro padrão
