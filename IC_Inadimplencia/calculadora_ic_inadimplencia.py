@@ -35,7 +35,7 @@ if tamanho_amostra_convertido == 0:
     
 else:
     st.write(f'''
-    *Volume amostral:* {tamanho_amostra}
+    __Volume amostral:__ {tamanho_amostra}
 
     
     
