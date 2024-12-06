@@ -57,20 +57,20 @@ else:
       ic_inferior = np.round(inad_positivo - Z_nivel_99 * erro_padrao, 4) * 100
       ic_superior = np.round(inad_positivo + Z_nivel_99 * erro_padrao, 4) * 100
       st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
-      st.write(f"Com 99% de confiança, a indimplência da população está entre {ic_inferior}% e {ic_superior}%.")
+      st.write(f"Com 99% de confiança, a indimplência da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
     
     
     elif confianca == '95%':
       ic_inferior = round(inad_positivo - Z_nivel_95 * erro_padrao, 4) * 100
       ic_superior = round(inad_positivo + Z_nivel_95 * erro_padrao, 4) * 100
       st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
-      st.write(f"Com 95% de confiança, a indimplência da população está entre {ic_inferior}% e {ic_superior}%.")
+      st.write(f"Com 95% de confiança, a indimplência da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
     
     elif confianca == '90%':
       ic_inferior = round(inad_positivo - Z_nivel_90 * erro_padrao, 4) * 100
       ic_superior = round(inad_positivo + Z_nivel_90 * erro_padrao, 4) * 100
       st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
-      st.write(f"Com 90% de confiança, a indimplência da população está entre {ic_inferior}% e {ic_superior}%.")
+      st.write(f"Com 90% de confiança, a indimplência da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
 
     # Análise de cumprimento das premissas de volumetria
     if (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
