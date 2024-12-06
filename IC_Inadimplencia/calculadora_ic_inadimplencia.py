@@ -24,7 +24,7 @@ st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/bruno-rodrigues-ca
 st.sidebar.markdown("- [Medium](https://medium.com/@brc-deep-analytics)")
 st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercadados)")
 
-tamanho_amostra = st.number_input("Insira o volume total da amostra ou população, caso haja: ", min_value=0)
+tamanho_amostra = st.number_input("Insira o volume total da população - os quais nem todos são convertidos -, caso haja: ", min_value=0)
 tamanho_amostra_convertido = st.number_input("Insira o volume total da amostra convertida no Positivo: ", min_value=0)
 inad_positivo = st.number_input("Insira a inadimplência Positivo: ", min_value=0.0, max_value=1.0, step=0.0001)
 confianca = st.selectbox('Selecione a página', ['99%', '95%', '90%'])
@@ -52,6 +52,9 @@ else:
     Z_nivel_99 = 2.576
 
     if tamanho_amostra < 1:
+        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+        st.write("Volume populacional desconhecido.")
+        
         # Buscando Zcrítico
         if confianca == '99%':
           ic_inferior = np.round(inad_positivo - Z_nivel_99 * erro_padrao, 4) * 100
