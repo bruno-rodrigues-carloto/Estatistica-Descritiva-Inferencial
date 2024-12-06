@@ -8,7 +8,7 @@ st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Calcu
 
 #Indicando do que se trata a web app
 foto = Image.open('IC_Inadimplencia/bruno_carloto.jpg')
-st.sidebar.image(foto, use_column_width=True, width=200, height=200)
+st.sidebar.image(foto, use_column_width=True, width=200)
 st.sidebar.subheader('Bruno Rodrigues Carloto')
 st.sidebar.markdown('Analista de dados e Política de Crédito')
 st.sidebar.markdown('#### Projeto de Estatística Inferencial')
