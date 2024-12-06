@@ -50,6 +50,23 @@ else:
     Z_nivel_90 = 1.645
     Z_nivel_95 = 1.96
     Z_nivel_99 = 2.576
+
+        # Análise de cumprimento das premissas de volumetria
+    if (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
+        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+        st.write("Os números de inadimplentes e adimplentes são suficientes para o cálculo.")
+        
+    elif (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
+        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+        st.write("O número de inadimplentes é suficiente para o cálculo, mas o número de adimplentes não é.")
+        
+    elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
+        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+        st.write("O número de adimplentes é suficiente para o cálculo, mas o número de inadimplentes não é.")
+        
+    elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
+        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+        st.write("Os números de inadimplentes e adimplentes NÃO são suficientes para o cálculo.")
     
     
     # Buscando Zcrítico
@@ -72,19 +89,3 @@ else:
       st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
       st.write(f"Com 90% de confiança, a indimplência da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
 
-    # Análise de cumprimento das premissas de volumetria
-    if (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
-        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
-        st.write("Os números de inadimplentes e adimplentes são suficientes para o cálculo.")
-        
-    elif (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
-        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
-        st.write("O número de inadimplentes é suficiente para o cálculo, mas o número de adimplentes não é.")
-        
-    elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
-        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
-        st.write("O número de adimplentes é suficiente para o cálculo, mas o número de inadimplentes não é.")
-        
-    elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
-        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
-        st.write("Os números de inadimplentes e adimplentes NÃO são suficientes para o cálculo.")
