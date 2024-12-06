@@ -12,8 +12,8 @@ st.sidebar.image(foto, use_column_width=True)
 st.sidebar.subheader('Bruno Rodrigues Carloto')
 st.sidebar.markdown('Analista de dados e Política de Crédito')
 st.sidebar.markdown('#### Projeto de Estatística Inferencial')
-# st.sidebar.markdown('''Leia o [artigo do projeto](https://br-cienciadedados.medium.com/projeto-de-machine-learning-ii-9c889faec8df), o qual descreve o passo a passo
-do desenvolvimento do modelo de machine learning. As descrições vão desde a limpeza dos dados até à análise do desempenho dos modelos e a seleção do melhor.''')
+# # st.sidebar.markdown('''Leia o [artigo do projeto](https://br-cienciadedados.medium.com/projeto-de-machine-learning-ii-9c889faec8df), o qual descreve o passo a passo
+# do desenvolvimento do modelo de machine learning. As descrições vão desde a limpeza dos dados até à análise do desempenho dos modelos e a seleção do melhor.''')
 # st.sidebar.title('Menu')
 # pag = st.sidebar.selectbox('Selecione a página', ['Interagir com a inteligência', 'Dashboard da base de dados do projeto'])
 
