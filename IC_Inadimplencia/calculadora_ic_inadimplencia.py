@@ -28,4 +28,4 @@ usuario =  st.text_input('Me informe seu nome para termos uma interação melhor
 renda = st.number_input('Me informe sua renda.')
 parcela = st.radio('Selecione a quantidade de parcela',(1, 2, 3, 4, 5))
 st.write('Valor à vista se o empréstimo for aprovado: R$ {} por mês'.format(mensalidade))
-if st.button("Ver Resultado"):
+st.button("Ver Resultado")
