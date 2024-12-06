@@ -12,19 +12,13 @@ st.sidebar.image(foto, use_column_width=True, width=50)
 st.sidebar.subheader('Bruno Rodrigues Carloto')
 st.sidebar.markdown('Analista de dados e Política de Crédito')
 st.sidebar.markdown('#### Projeto de Estatística Inferencial')
-# # st.sidebar.markdown('''Leia o [artigo do projeto](https://br-cienciadedados.medium.com/projeto-de-machine-learning-ii-9c889faec8df), o qual descreve o passo a passo
-# do desenvolvimento do modelo de machine learning. As descrições vão desde a limpeza dos dados até à análise do desempenho dos modelos e a seleção do melhor.''')
-# st.sidebar.title('Menu')
-# pag = st.sidebar.selectbox('Selecione a página', ['Interagir com a inteligência', 'Dashboard da base de dados do projeto'])
-
-# st.sidebar.markdown('Feito por : Bruno Rodrigues Carloto')
 
 st.sidebar.markdown("Redes Sociais :")
 st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/bruno-rodrigues-carloto)")
 st.sidebar.markdown("- [Medium](https://medium.com/@brc-deep-analytics)")
 st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercadados)")
 
-tamanho_populacao = st.number_input("Insira o volume total da população - os quais nem todos são convertidos -, caso haja: ", min_value=0)
+tamanho_populacao = st.number_input("Insira o volume total da população - os quais nem todos são performados -, caso haja: ", min_value=0)
 tamanho_amostra_convertido = st.number_input("Insira o volume total da amostra performada: ", min_value=0)
 inad_positivo = st.number_input("Insira a inadimplência: ", min_value=0.0, max_value=1.0, step=0.0001)
 confianca = st.selectbox('Selecione a página', ['99%', '95%', '90%'])
@@ -38,9 +32,9 @@ else:
     st.write(f'''
     Volume população: {tamanho_populacao}
     
-    Volume amostral convertido: {tamanho_amostra_convertido}
+    Volume amostral performado: {tamanho_amostra_convertido}
     
-    Inadimplência amostral convertido: {inad_positivo * 100}%
+    Inadimplência amostral: {inad_positivo * 100}%
     
     ''')
     # Calculando erro padrão
