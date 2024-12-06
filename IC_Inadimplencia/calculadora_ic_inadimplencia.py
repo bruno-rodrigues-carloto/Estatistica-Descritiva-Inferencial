@@ -4,7 +4,7 @@ from PIL import Image
 import streamlit as st
 
 #Indicando sidebar
-st.markdown('*__Observação: para mais informações acerca do projeto, clique na seta no canto esquerdo superior da tela__* ')
+st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Calculadora de IC inadimplentes não convertidos</h1>", unsafe_allow_html=True)
 
 #Indicando do que se trata a web app
 # foto = Image.open('bruno.carloto (2).png')
