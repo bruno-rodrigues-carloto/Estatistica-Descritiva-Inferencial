@@ -24,7 +24,7 @@ st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/bruno-rodrigues-ca
 st.sidebar.markdown("- [Medium](https://medium.com/@brc-deep-analytics)")
 st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercadados)")
 
-tamanho_amostra = st.number_input("Insira o volume total da população - os quais nem todos são convertidos -, caso haja: ", min_value=0)
+tamanho_populacao = st.number_input("Insira o volume total da população - os quais nem todos são convertidos -, caso haja: ", min_value=0)
 tamanho_amostra_convertido = st.number_input("Insira o volume total da amostra performada: ", min_value=0)
 inad_positivo = st.number_input("Insira a inadimplência: ", min_value=0.0, max_value=1.0, step=0.0001)
 confianca = st.selectbox('Selecione a página', ['99%', '95%', '90%'])
@@ -36,7 +36,7 @@ if tamanho_amostra_convertido == 0:
 else:
     st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Resumo input</h1>", unsafe_allow_html=True)
     st.write(f'''
-    Volume amostral: {tamanho_amostra}
+    Volume população: {tamanho_populacao}
     
     Volume amostral convertido: {tamanho_amostra_convertido}
     
