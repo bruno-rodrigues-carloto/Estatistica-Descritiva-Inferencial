@@ -24,9 +24,9 @@ st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/bruno-rodrigues-ca
 st.sidebar.markdown("- [Medium](https://medium.com/@brc-deep-analytics)")
 st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercadados)")
 
-tamanho_amostra = st.number_input("Insira o volume total da amostra: ", min_value=0.0, max_value=1.0, step=4)
-tamanho_amostra_convertido = st.number_input("Insira o volume total da amostra convertida no Positivo: ", min_value=0.0, max_value=1.0, step=4)
-inad_positivo = st.number_input("Insira a inadimplência Positivo: ", min_value=0.0, max_value=1.0, step=4)
+tamanho_amostra = st.number_input("Insira o volume total da amostra: ", min_value=0.0, max_value=1.0, step=0.00000000001)
+tamanho_amostra_convertido = st.number_input("Insira o volume total da amostra convertida no Positivo: ", min_value=0.0, max_value=1.0, step=0.00000000001)
+inad_positivo = st.number_input("Insira a inadimplência Positivo: ", min_value=0.0, max_value=1.0, step=0.00000000001)
 confianca = st.sidebar.selectbox('Selecione a página', ['99%', '95%', '90%'])
 
 # Calculando erro padrão para margem de erro
