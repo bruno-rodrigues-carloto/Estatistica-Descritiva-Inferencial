@@ -74,17 +74,17 @@ else:
 
     # Análise de cumprimento das premissas de volumetria
     if (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
-        st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
         st.write("Os números de inadimplentes e adimplentes são suficientes para o cálculo.")
         
     elif (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
-        st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
         st.write("O número de inadimplentes é suficiente para o cálculo, mas o número de adimplentes não é.")
         
     elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
-        st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
         st.write("O número de adimplentes é suficiente para o cálculo, mas o número de inadimplentes não é.")
         
     elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
-        st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
         st.write("Os números de inadimplentes e adimplentes NÃO são suficientes para o cálculo.")
