@@ -27,7 +27,7 @@ st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercad
 tamanho_amostra = st.number_input("Insira o volume total da amostra: ", min_value=0)
 tamanho_amostra_convertido = st.number_input("Insira o volume total da amostra convertida no Positivo: ", min_value=0)
 inad_positivo = st.number_input("Insira a inadimplência Positivo: ", min_value=0.0, max_value=1.0, step=0.0001)
-confianca = st.sidebar.selectbox('Selecione a página', ['99%', '95%', '90%'])
+confianca = st.selectbox('Selecione a página', ['99%', '95%', '90%'])
 
 # Calculando erro padrão para margem de erro
 if tamanho_amostra_convertido == 0:
@@ -39,16 +39,16 @@ else:
     
     # Análise de cumprimento das premissas de volumetria
     if (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
-        print("Os números de inadimplentes e adimplentes são suficientes.")
+        st.write("Os números de inadimplentes e adimplentes são suficientes.")
         
     elif (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
-        print("Os números de inadimplentes é suficiente, mas o número de adimplentes não é.")
+        st.write("Os números de inadimplentes é suficiente, mas o número de adimplentes não é.")
         
     elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
-        print("O número de adimplentes é suficiente, mas o número de inadimplentes não é.")
+        st.write("O número de adimplentes é suficiente, mas o número de inadimplentes não é.")
         
     elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
-        print("Os números de inadimplentes e adimplentes NÃO são suficientes.")
+        st.write("Os números de inadimplentes e adimplentes NÃO são suficientes.")
 
 
     # Definições dos Z's
@@ -59,8 +59,8 @@ else:
     
     # Buscando Zcrítico
     if confianca == '99%':
-      ic_inferior = round(inad_positivo - Z_nivel_99 * erro_padrao, 4) * 100
-      ic_superior = round(inad_positivo + Z_nivel_99 * erro_padrao, 4) * 100
+      ic_inferior = np.round(inad_positivo - Z_nivel_99 * erro_padrao, 4) * 100
+      ic_superior = np.round(inad_positivo + Z_nivel_99 * erro_padrao, 4) * 100
       
       st.write(f"Com 99% de confiança, a indimplência da população está entre {ic_inferior}% e {ic_superior}.")
     
