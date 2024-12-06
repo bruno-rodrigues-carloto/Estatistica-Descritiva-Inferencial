@@ -8,7 +8,7 @@ st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Calcu
 
 #Indicando do que se trata a web app
 foto = Image.open('IC_Inadimplencia/bruno_carloto.jpg')
-st.sidebar.image(foto, use_column_width=True)
+st.sidebar.image(foto, use_column_width=False, width=200, height=200)
 st.sidebar.subheader('Bruno Rodrigues Carloto')
 st.sidebar.markdown('Analista de dados e Política de Crédito')
 st.sidebar.markdown('#### Projeto de Estatística Inferencial')
@@ -17,7 +17,7 @@ st.sidebar.markdown('#### Projeto de Estatística Inferencial')
 # st.sidebar.title('Menu')
 # pag = st.sidebar.selectbox('Selecione a página', ['Interagir com a inteligência', 'Dashboard da base de dados do projeto'])
 
-st.sidebar.markdown('Feito por : Bruno Rodrigues Carloto')
+# st.sidebar.markdown('Feito por : Bruno Rodrigues Carloto')
 
 st.sidebar.markdown("Redes Sociais :")
 st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/bruno-rodrigues-carloto)")
