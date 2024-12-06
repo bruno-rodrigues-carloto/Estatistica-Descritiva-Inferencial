@@ -34,6 +34,12 @@ if tamanho_amostra_convertido == 0:
     st.write("")
     
 else:
+    st.write(f'''
+    *Volume amostral:* {tamanho_amostra}
+
+    
+    
+    ''')
     # Calculando erro padrão
     erro_padrao = np.sqrt( ((inad_positivo * (1 - inad_positivo))/tamanho_amostra_convertido) )
     
