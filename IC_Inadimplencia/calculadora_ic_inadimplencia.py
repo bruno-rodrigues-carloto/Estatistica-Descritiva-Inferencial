@@ -32,17 +32,22 @@ inad_positivo = st.number_input("Insira a inadimplência Positivo: ", min_value=
 erro_padrao = np.sqrt( ((inad_positivo * (1 - inad_positivo))/tamanho_amostra_convertido) )
 
 # Análise de cumprimento das premissas de volumetria
-if (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
-    print("Os números de inadimplentes e adimplentes são suficientes.")
-    
-elif (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
-    print("Os números de inadimplentes é suficiente, mas o número de adimplentes não é.")
-    
-elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
-    print("O número de adimplentes é suficiente, mas o número de inadimplentes não é.")
-    
-if (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
-    print("Os números de inadimplentes e adimplentes NÃO são suficientes.")
+try:
+    if (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
+        print("Os números de inadimplentes e adimplentes são suficientes.")
+        
+    elif (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
+        print("Os números de inadimplentes é suficiente, mas o número de adimplentes não é.")
+        
+    elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
+        print("O número de adimplentes é suficiente, mas o número de inadimplentes não é.")
+        
+    elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
+        print("Os números de inadimplentes e adimplentes NÃO são suficientes.")
+
+except ZeroDivisionError:
+    st.write("Denominador não pode ser zero.")
+
 
 # Definições dos Z's
 Z_nivel_90 = 1.645
