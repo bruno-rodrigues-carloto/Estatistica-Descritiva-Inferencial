@@ -24,8 +24,57 @@ st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/bruno-rodrigues-ca
 st.sidebar.markdown("- [Medium](https://medium.com/@brc-deep-analytics)")
 st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercadados)")
 
-usuario =  st.text_input('Me informe seu nome para termos uma interação melhor.')
-renda = st.number_input('Me informe sua renda.')
-parcela = st.radio('Selecione a quantidade de parcela',(1, 2, 3, 4, 5))
-st.write('Valor à vista se o empréstimo for aprovado: R$ {} por mês'.format(mensalidade))
-st.button("Ver Resultado")
+tamanho_amostra = np.round(float(st.number_input("Insira o volume total da amostra: ")), 4)
+tamanho_amostra_convertido = np.round(float(st.number_input("Insira o volume total da amostra convertida no Positivo: ")), 4)
+inad_positivo = np.round(float(st.number_input("Insira a inadimplência Positivo: ")), 4)
+
+# Calculando erro padrão para margem de erro
+erro_padrao = np.sqrt( ((inad_positivo * (1 - inad_positivo))/tamanho_amostra_convertido) )
+
+# Análise de cumprimento das premissas de volumetria
+if (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
+    print("Os números de inadimplentes e adimplentes são suficientes.")
+    
+elif (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
+    print("Os números de inadimplentes é suficiente, mas o número de adimplentes não é.")
+    
+elif (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
+    print("O número de adimplentes é suficiente, mas o número de inadimplentes não é.")
+    
+if (tamanho_amostra_convertido * inad_positivo < 10) and (tamanho_amostra_convertido * (1 - inad_positivo) < 10):
+    print("Os números de inadimplentes e adimplentes NÃO são suficientes.")
+
+# Definições dos Z's
+Z_nivel_90 = 1.645
+Z_nivel_95 = 1.96
+Z_nivel_99 = 2.576
+
+# Selecionar nível de confiança
+confianca = st.sidebar.selectbox('Selecione a página', ['99%', '95%', '90%'])
+
+# Buscando Zcrítico
+if confianca == '99%':
+  ic_inferior = round(inad_positivo - Z_nivel_99 * erro_padrao, 4) * 100
+  ic_superior = round(inad_positivo + Z_nivel_99 * erro_padrao, 4) * 100
+  
+  st.write(f"Com 99% de confiança, a indimplência da população está entre {ic_inferior}% e {ic_superior}.")
+
+
+elif confianca == '95%':
+  ic_inferior = round(inad_positivo - Z_nivel_95 * erro_padrao, 4) * 100
+  ic_superior = round(inad_positivo + Z_nivel_95 * erro_padrao, 4) * 100
+  
+  st.write(f"Com 95% de confiança, a indimplência da população está entre {ic_inferior}% e {ic_superior}.")
+
+elif confianca == '90%':
+  ic_inferior = round(inad_positivo - Z_nivel_90 * erro_padrao, 4) * 100
+  ic_superior = round(inad_positivo + Z_nivel_90 * erro_padrao, 4) * 100
+  
+  st.write(f"Com 90% de confiança, a indimplência da população está entre {ic_inferior}% e {ic_superior}.")
+
+           
+
+# parcela = st.radio('Selecione a quantidade de parcela',(1, 2, 3, 4, 5))
+# st.write('Valor à vista se o empréstimo for aprovado: R$ {} por mês'.format(mensalidade))
+# st.button("Ver Resultado")
+# usuario =  st.text_input('Me informe seu nome para termos uma interação melhor.')
