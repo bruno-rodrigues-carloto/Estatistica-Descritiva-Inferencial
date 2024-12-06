@@ -34,6 +34,7 @@ if tamanho_amostra_convertido == 0:
     st.write("")
     
 else:
+    st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resumo input</h1>", unsafe_allow_html=True)
     st.write(f'''
     __Volume amostral:__ {tamanho_amostra}
     
