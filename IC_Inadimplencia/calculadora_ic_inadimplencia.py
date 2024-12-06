@@ -32,9 +32,11 @@ confianca = st.sidebar.selectbox('Selecione a página', ['99%', '95%', '90%'])
 # Calculando erro padrão para margem de erro
 if tamanho_amostra_convertido == 0:
     st.write("")
-    erro_padrao = np.sqrt( ((inad_positivo * (1 - inad_positivo))/tamanho_amostra_convertido) )
     
 else:
+    # Calculando erro padrão
+    erro_padrao = np.sqrt( ((inad_positivo * (1 - inad_positivo))/tamanho_amostra_convertido) )
+    
     # Análise de cumprimento das premissas de volumetria
     if (tamanho_amostra_convertido * inad_positivo >= 10) and (tamanho_amostra_convertido * (1 - inad_positivo) >= 10):
         print("Os números de inadimplentes e adimplentes são suficientes.")
