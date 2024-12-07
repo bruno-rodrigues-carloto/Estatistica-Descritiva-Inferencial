@@ -23,7 +23,7 @@ tamanho_amostra = st.number_input("Insira o volume total da amostra: ", min_valu
 proporcao = st.number_input("Insira a proporção em forma decimal: ", min_value=0.0, max_value=1.0, step=0.0001)
 confianca = st.selectbox('Selecione a o nível de confiança: ', ['99%', '95%', '90%'])
 
-# Calculando erro padrão para margem de erro
+
 if tamanho_amostra == 0:
     st.write("")
     
@@ -69,42 +69,78 @@ else:
           st.write(f"Com 90% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
         
     else:
-        # Análise de cumprimento das premissas de volumetria
-        if (tamanho_amostra * proporcao >= 5) and (tamanho_amostra * (1 - proporcao) >= 5):
-            st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
-            st.write("Os números de sucesso e fracasso são suficientes para o cálculo.")
+        infinitude_amostra = tamanho_amostra/tamanho_populacao
+
+        if infinitude_amostra > 0.05:
+            write("População finita")
         
+            # Análise de cumprimento das premissas de volumetria
+            if (tamanho_amostra * proporcao >= 5) and (tamanho_amostra * (1 - proporcao) >= 5):
+                st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+                st.write("Os números de sucesso e fracasso são suficientes para o cálculo.")
+            
+            
+                # Buscando Zcrítico
+                fator_correcao = np.sqrt((tamanho_populacao - tamanho_amostra)/(tamanho_populacao - 1))
+                
+                if confianca == '99%':
+                  ic_inferior = np.round(proporcao - ((Z_nivel_99 * erro_padrao) * fator_correcao), 4) * 100
+                  ic_superior = np.round(proporcao + ((Z_nivel_99 * erro_padrao) * fator_correcao), 4) * 100
+                  st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
+                  st.write(f"Com 99% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
+                
+                
+                elif confianca == '95%':
+                  ic_inferior = round(proporcao - ((Z_nivel_95 * erro_padrao) * fator_correcao), 4) * 100
+                  ic_superior = round(proporcao + ((Z_nivel_95 * erro_padrao) * fator_correcao), 4) * 100
+                  st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
+                  st.write(f"Com 95% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
+                
+                elif confianca == '90%':
+                  ic_inferior = round(proporcao - ((Z_nivel_90 * erro_padrao) * fator_correcao), 4) * 100
+                  ic_superior = round(proporcao + ((Z_nivel_90 * erro_padrao) * fator_correcao), 4) * 100
+                  st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
+                  st.write(f"Com 90% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
         
-            # Buscando Zcrítico
-            if confianca == '99%':
-              ic_inferior = np.round(proporcao - Z_nivel_99 * erro_padrao, 4) * 100
-              ic_superior = np.round(proporcao + Z_nivel_99 * erro_padrao, 4) * 100
-              st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
-              st.write(f"Com 99% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
+        else:
+        
+            write("População infinita")
             
-            
-            elif confianca == '95%':
-              ic_inferior = round(proporcao - Z_nivel_95 * erro_padrao, 4) * 100
-              ic_superior = round(proporcao + Z_nivel_95 * erro_padrao, 4) * 100
-              st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
-              st.write(f"Com 95% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
-            
-            elif confianca == '90%':
-              ic_inferior = round(proporcao - Z_nivel_90 * erro_padrao, 4) * 100
-              ic_superior = round(proporcao + Z_nivel_90 * erro_padrao, 4) * 100
-              st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
-              st.write(f"Com 90% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
+            # Análise de cumprimento das premissas de volumetria
+            if (tamanho_amostra * proporcao >= 5) and (tamanho_amostra * (1 - proporcao) >= 5):
+                st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+                st.write("Os números de sucesso e fracasso são suficientes para o cálculo.")
+
+                if confianca == '99%':
+                  ic_inferior = np.round(proporcao - (Z_nivel_99 * erro_padrao), 4) * 100
+                  ic_superior = np.round(proporcao + (Z_nivel_99 * erro_padrao), 4) * 100
+                  st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
+                  st.write(f"Com 99% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
+                
+                
+                elif confianca == '95%':
+                  ic_inferior = round(proporcao - (Z_nivel_95 * erro_padrao), 4) * 100
+                  ic_superior = round(proporcao + (Z_nivel_95 * erro_padrao), 4) * 100
+                  st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
+                  st.write(f"Com 95% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
+                
+                elif confianca == '90%':
+                  ic_inferior = round(proporcao - (Z_nivel_90 * erro_padrao), 4) * 100
+                  ic_superior = round(proporcao + (Z_nivel_90 * erro_padrao), 4) * 100
+                  st.markdown("<h1 style='font-size: 16px; color: red; font-weight: bold;'>Resultado:</h1>", unsafe_allow_html=True)
+                  st.write(f"Com 90% de confiança, a proporção da população está entre {np.round(ic_inferior, 2)}% e {np.round(ic_superior, 2)}%.")
+        
+    
+            elif (tamanho_amostra * proporcao >= 5) and (tamanho_amostra * (1 - proporcao) < 5):
+                st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+                st.write("PROBLEMA: O número de sucesso é suficiente para o cálculo, mas o número de fracasso não é. Ambos precisam ser.")
+                
+            elif (tamanho_amostra * proporcao < 5) and (tamanho_amostra * (1 - proporcao) >= 5):
+                st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+                st.write("PROBLEMA: O número de fracasso é suficiente para o cálculo, mas o número de sucesso não é. Ambos precisam ser.")
+                
+            elif (tamanho_amostra * proporcao < 5) and (tamanho_amostra * (1 - proporcao) < 5):
+                st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
+                st.write("PROBLEMA: Os números de sucesso e fracasso NÃO são suficientes para o cálculo. Ambos precisam ser.")
 
 
-        
-        elif (tamanho_amostra * proporcao >= 5) and (tamanho_amostra * (1 - proporcao) < 5):
-            st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
-            st.write("PROBLEMA: O número de sucesso é suficiente para o cálculo, mas o número de fracasso não é. Ambos precisam ser.")
-            
-        elif (tamanho_amostra * proporcao < 5) and (tamanho_amostra * (1 - proporcao) >= 5):
-            st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
-            st.write("PROBLEMA: O número de fracasso é suficiente para o cálculo, mas o número de sucesso não é. Ambos precisam ser.")
-            
-        elif (tamanho_amostra * proporcao < 5) and (tamanho_amostra * (1 - proporcao) < 5):
-            st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
-            st.write("PROBLEMA: Os números de sucesso e fracasso NÃO são suficientes para o cálculo. Ambos precisam ser.")
