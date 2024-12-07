@@ -26,6 +26,9 @@ confianca = st.selectbox('Selecione a o nível de confiança: ', ['99%', '95%', 
 
 if tamanho_amostra == 0:
     st.write("")
+
+elif tamanho_amostra > tamanho_populacao:
+    st.write("ERRO: Amostra maior do que a população.")
     
 else:
     st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Resumo input</h1>", unsafe_allow_html=True)
