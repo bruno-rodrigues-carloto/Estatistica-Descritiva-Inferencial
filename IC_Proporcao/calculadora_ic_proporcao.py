@@ -21,7 +21,7 @@ st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercad
 tamanho_populacao = st.number_input("Insira o volume total da população - os quais nem todos são performados -, caso haja: ", min_value=0)
 tamanho_amostra = st.number_input("Insira o volume total da amostra: ", min_value=0)
 proporcao = st.number_input("Insira a proporção em forma decimal: ", min_value=0.0, max_value=1.0, step=0.0001)
-confianca = st.selectbox('Selecione a página', ['99%', '95%', '90%'])
+confianca = st.selectbox('Selecione a o nível de confiança: ', ['99%', '95%', '90%'])
 
 # Calculando erro padrão para margem de erro
 if tamanho_amostra == 0:
