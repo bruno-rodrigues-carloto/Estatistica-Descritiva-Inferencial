@@ -18,7 +18,7 @@ st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/bruno-rodrigues-ca
 st.sidebar.markdown("- [Medium](https://medium.com/@brc-deep-analytics)")
 st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercadados)")
 
-tamanho_populacao = st.number_input("Insira o volume total da população - os quais nem todos são performados -, caso haja: ", min_value=0)
+tamanho_populacao = st.number_input("Insira o volume total da população, caso haja: ", min_value=0)
 tamanho_amostra = st.number_input("Insira o volume total da amostra: ", min_value=0)
 proporcao = st.number_input("Insira a proporção em forma decimal: ", min_value=0.0, max_value=1.0, step=0.0001)
 confianca = st.selectbox('Selecione a o nível de confiança: ', ['99%', '95%', '90%'])
