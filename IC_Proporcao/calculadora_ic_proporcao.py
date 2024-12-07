@@ -33,11 +33,11 @@ elif tamanho_amostra > tamanho_populacao:
 else:
     st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Resumo input</h1>", unsafe_allow_html=True)
     st.write(f'''
-    Volume população: {tamanho_populacao}
+    * Volume população: {tamanho_populacao}
     
-    Volume amostra: {tamanho_amostra}
+    * Volume amostra: {tamanho_amostra}
     
-    Proporção amostral: {proporcao * 100}%
+    * Proporção amostral: {proporcao * 100}%
     
     ''')
     # Calculando erro padrão
