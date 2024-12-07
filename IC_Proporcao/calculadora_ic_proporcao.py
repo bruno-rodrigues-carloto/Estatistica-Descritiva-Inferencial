@@ -75,7 +75,7 @@ else:
         infinitude_amostra = tamanho_amostra/tamanho_populacao
 
         if infinitude_amostra > 0.05:
-            st.write("População finita")
+            st.write("* População finita")
         
             # Análise de cumprimento das premissas de volumetria
             if (tamanho_amostra * proporcao >= 5) and (tamanho_amostra * (1 - proporcao) >= 5):
@@ -107,7 +107,7 @@ else:
         
         else:
         
-            st.write("População infinita")
+            st.write("* População infinita")
             
             # Análise de cumprimento das premissas de volumetria
             if (tamanho_amostra * proporcao >= 5) and (tamanho_amostra * (1 - proporcao) >= 5):
