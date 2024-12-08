@@ -17,6 +17,9 @@ st.sidebar.markdown("- [Linkedin](https://www.linkedin.com/in/bruno-rodrigues-ca
 st.sidebar.markdown("- [Medium](https://medium.com/@brc-deep-analytics)")
 st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercadados)")
 
+# Seleção de página
+st.sidebar.selectbox("Página:", ["1. Calculadora", "2. Breve teoria"])
+
 # Input das informações para inferência do intervalo de confiança
 tamanho_populacao = st.number_input("Insira o volume total da população, caso haja: ", min_value=0)
 tamanho_amostra = st.number_input("Insira o volume total da amostra: ", min_value=0)
