@@ -221,3 +221,10 @@ elif pagina == "2. Breve teoria":
     * *q*: proporção de fracasso | (1 - p)
     ''')
     st.markdown("<h1 style='font-size: 20px; color: black; font-weight: bold;'>Fórmulas</h1>", unsafe_allow_html=True)
+    st.write('''
+    Há basicamente duas fórmulas, uma para quando a população é finita e outra para quando é infinita.
+    ''')
+    st.markdown("<h1 style='font-size: 14px; color: black; font-weight: bold;'>População finita</h1>", unsafe_allow_html=True)
+    st.write('''
+    A população é finita quando *__
+    ''')
