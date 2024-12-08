@@ -271,3 +271,4 @@ elif pagina == "2. Breve teoria":
     dim_foto_ic_sem_fator_correcao = (315,65)
     foto_ic_sem_fator_correcao = foto_ic_sem_fator_correcao.resize(dim_foto_ic_sem_fator_correcao)
     st.image(foto_ic_sem_fator_correcao)
+    
