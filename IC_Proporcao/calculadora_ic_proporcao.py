@@ -211,5 +211,11 @@ elif pagina == "2. Breve teoria":
     ''')
     st.markdown("<h1 style='font-size: 20px; color: gray; font-weight: bold;'>Premissas</h1>", unsafe_allow_html=True)
     st.write('''
-    1. *n.p >= 5 e n.(1 - p) >= 5*
+    1. __*n.p >= 5 e n.q >= 5*__
+
+    onde:
+
+    *n*: tamanho da amostra
+    *p*: proporção de sucesso
+    *q*: proporção de fracasso | (1 - p)
     ''')
