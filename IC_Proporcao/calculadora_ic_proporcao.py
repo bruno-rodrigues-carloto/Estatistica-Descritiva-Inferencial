@@ -215,7 +215,7 @@ elif pagina == "2. Breve teoria":
 
     onde:
 
-    *n*: tamanho da amostra
-    *p*: proporção de sucesso
-    *q*: proporção de fracasso | (1 - p)
+    * *n*: tamanho da amostra
+    * *p*: proporção de sucesso
+    * *q*: proporção de fracasso | (1 - p)
     ''')
