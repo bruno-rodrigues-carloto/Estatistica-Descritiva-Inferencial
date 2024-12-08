@@ -225,7 +225,7 @@ elif pagina == "2. Breve teoria":
     st.write('''
     Há basicamente duas fórmulas, uma para quando a população é finita e outra para quando é infinita.
     ''')
-    st.markdown("<h1 style='font-size: 14px; color: black; font-weight: bold;'>População finita</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 18px; color: black; font-weight: bold;'>População finita</h1>", unsafe_allow_html=True)
     st.write('''
     A população é finita quando:
     ''')
@@ -260,7 +260,7 @@ elif pagina == "2. Breve teoria":
     * *Z crítico*: equivalência do nível de confiança na tabela normal padrão
     ''')
 
-    st.markdown("<h1 style='font-size: 14px; color: black; font-weight: bold;'>População infinita</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 18px; color: black; font-weight: bold;'>População infinita</h1>", unsafe_allow_html=True)
     st.write('''
     A população é infinita quando não cumpre o critério acima apresentado.
 
