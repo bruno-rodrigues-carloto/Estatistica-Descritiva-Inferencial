@@ -229,4 +229,6 @@ elif pagina == "2. Breve teoria":
     A população é finita quando:
     ''')
     foto_pop_finita = Image.open('IC_Proporcao/pop_finita.png')
-    st.image(foto_pop_finita, use_column_width=True, width=5)
+    dim_foto_pop_finita = (300,300)
+    foto_pop_finita = foto_pop_finita.resize(dim_foto_pop_finita)
+    st.image(foto_pop_finita)
