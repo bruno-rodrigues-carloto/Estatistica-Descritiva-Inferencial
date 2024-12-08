@@ -199,3 +199,12 @@ elif pagina == "2. Breve teoria":
     podemos generalizar a mesma para a população, entendendo estatisticamente o nível de risco da totalidade desse público.
     ''')
     st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Breve teoria</h1>", unsafe_allow_html=True)
+    st.write('''
+    A Estatística Inferencial é justamente, a partir de uma amostra, generalizarmos determinada estatística/proporção/probabilidade a uma população
+    que não temos acesso.
+
+    Exemplos:
+
+    * A partir de uma amostra inferirmos a inadimplência de uma população;
+    * A partir
+    ''')
