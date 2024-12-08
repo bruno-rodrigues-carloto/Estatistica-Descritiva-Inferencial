@@ -211,7 +211,8 @@ elif pagina == "2. Breve teoria":
     ''')
     st.markdown("<h1 style='font-size: 20px; color: black; font-weight: bold;'>Premissas</h1>", unsafe_allow_html=True)
     st.write('''
-    1. __*n.p >= 5 e n.q >= 5*__
+    1. __*n.p >= 5*__
+    2. __*n.q >= 5*__
 
     onde:
 
