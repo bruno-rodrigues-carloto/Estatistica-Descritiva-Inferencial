@@ -209,7 +209,7 @@ elif pagina == "2. Breve teoria":
     * A partir de uma amostra, inferirmos a proporção de votos de um candidato a nível populacional;
     * A partir de uma amostra, inferirmos a proporção de peças de uma produção estar danificada.
     ''')
-    st.markdown("<h1 style='font-size: 20px; color: gray; font-weight: bold;'>Premissas</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 20px; color: black; font-weight: bold;'>Premissas</h1>", unsafe_allow_html=True)
     st.write('''
     1. __*n.p >= 5 e n.q >= 5*__
 
@@ -219,3 +219,4 @@ elif pagina == "2. Breve teoria":
     * *p*: proporção de sucesso
     * *q*: proporção de fracasso | (1 - p)
     ''')
+    st.markdown("<h1 style='font-size: 20px; color: black; font-weight: bold;'>Fórmulas</h1>", unsafe_allow_html=True)
