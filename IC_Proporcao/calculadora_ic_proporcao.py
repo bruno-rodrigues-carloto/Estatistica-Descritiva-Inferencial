@@ -18,7 +18,7 @@ st.sidebar.markdown("- [Medium](https://medium.com/@brc-deep-analytics)")
 st.sidebar.markdown("- [Mercadados](https://brunnocarlotosjob.wixsite.com/mercadados)")
 
 # Seleção de página
-st.sidebar.markdown("<h1 style='font-size: 14px; color: gray; font-weight: bold;'>Página:</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("<h1 style='font-size: 18px; color: gray; font-weight: bold;'>Página:</h1>", unsafe_allow_html=True)
 st.sidebar.selectbox("", ["1. Calculadora", "2. Breve teoria"])
 
 # Input das informações para inferência do intervalo de confiança
