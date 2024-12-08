@@ -131,6 +131,9 @@ else:
             elif (tamanho_amostra * proporcao < 5) and (tamanho_amostra * (1 - proporcao) < 5):
                 st.markdown("<h1 style='font-size: 16px; color: gray; font-weight: bold;'>Premissas de volume:</h1>", unsafe_allow_html=True)
                 st.write("PROBLEMA: Os números de sucesso e fracasso NÃO são suficientes para o cálculo. Ambos precisam ser.")
+
+            else:
+                st.write('Falha')
        
         # Em casos de população infinita
         else:
