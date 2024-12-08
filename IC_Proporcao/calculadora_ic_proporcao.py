@@ -236,12 +236,27 @@ elif pagina == "2. Breve teoria":
     st.image(foto_pop_finita)
     
     st.write('''
+    onde:
+
+    * *n*: tamanho da amostra
+    * *N*: tamanho da população
+    
     Nesse caso, usa-se a seguinte fórmula:
     ''')
 
     # Definição e plotagem da imagem do cálculo de IC com população finita
     foto_ic_com_fator_correcao = Image.open('IC_Proporcao/ic_com_fator_correcao.jpg')
-    dim_foto_ic_com_fator_correcao = (310,70)
+    dim_foto_ic_com_fator_correcao = (315,65)
     foto_ic_com_fator_correcao = foto_ic_com_fator_correcao.resize(dim_foto_ic_com_fator_correcao)
     st.image(foto_ic_com_fator_correcao)
+
+    st.write('''
+    onde:
+
+    * *n*: tamanho da amostra
+    * *N*: tamanho da população
+    * *p*: proporção
+    * *Zcrítico*: equivalência do nível de confiança na tabela normal padrão
     
+    Nesse caso, usa-se a seguinte fórmula:
+    ''')
