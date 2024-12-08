@@ -189,7 +189,7 @@ if pagina == "1. Calculadora":
 elif pagina == "2. Breve teoria":
 
     # Apresentação da ferramenta
-    st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Breve teoria</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Breve contexto</h1>", unsafe_allow_html=True)
     st.write('''
     Este projeto surgiu da proatividade frente à necessidade da aplicação da Estatística Inferencial no cenário de Política de Crédito, 
     quando buscamos identificar a inadimplência de uma população público-alvo com determinada característica (score, comportamento, cadastrais etc.), 
