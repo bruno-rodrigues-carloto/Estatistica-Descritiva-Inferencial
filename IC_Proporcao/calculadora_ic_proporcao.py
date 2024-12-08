@@ -256,7 +256,18 @@ elif pagina == "2. Breve teoria":
     * *n*: tamanho da amostra
     * *N*: tamanho da população
     * *p*: proporção
-    * *Zcrítico*: equivalência do nível de confiança na tabela normal padrão
-    
+    * *Z crítico*: equivalência do nível de confiança na tabela normal padrão
+    ''')
+
+    st.markdown("<h1 style='font-size: 14px; color: black; font-weight: bold;'>População infinita</h1>", unsafe_allow_html=True)
+    st.write('''
+    A população é infinita quando não cumpre o critério acima apresentado.
+
     Nesse caso, usa-se a seguinte fórmula:
     ''')
+
+    # Definição e plotagem da imagem do cálculo de IC com população finita
+    foto_ic_sem_fator_correcao = Image.open('IC_Proporcao/ic_sem_fator_correcao.jpg')
+    dim_foto_ic_sem_fator_correcao = (315,65)
+    foto_ic_sem_fator_correcao = foto_ic_sem_fator_correcao.resize(dim_foto_ic_sem_fator_correcao)
+    st.image(foto_ic_sem_fator_correcao)
