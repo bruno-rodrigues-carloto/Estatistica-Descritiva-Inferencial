@@ -191,8 +191,10 @@ elif pagina == "2. Breve teoria":
     # Apresentação da ferramenta
     st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Breve teoria</h1>", unsafe_allow_html=True)
     st.write('''
-    Este projeto surgiu da proatividade frente à necessidade da aplicação da Estatística Inferencial no trabalho, cenário de Política de Crédito, 
-    quando buscamos entender o comportamento de inadimplência de um público que para o qual não temos essa informação, mas temos informações cadastrais e probabilísticas,
-    como modelos de score.
-    
+    Este projeto surgiu da proatividade frente à necessidade da aplicação da Estatística Inferencial no cenário de Política de Crédito, 
+    quando buscamos identificar a inadimplência de uma população público-alvo com determinada característica (score, comportamento, cadastrais etc.), 
+    acerca da qual não temos performance para a todalidade, mas temos para uma proporção dela.
+
+    A partir da inadimplência de uma amostra, 
+    podemos generalizar a inadimplência para a população, entendendo estatisticamente o nível de risco desse público se abrirmos, por exemplo, concessão de crédito.
     ''')
