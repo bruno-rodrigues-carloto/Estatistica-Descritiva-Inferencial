@@ -246,7 +246,7 @@ elif pagina == "2. Breve teoria":
 
     # Definição e plotagem da imagem do cálculo de IC com população finita
     foto_ic_com_fator_correcao = Image.open('IC_Proporcao/ic_com_fator_correcao.jpg')
-    dim_foto_ic_com_fator_correcao = (335,65)
+    dim_foto_ic_com_fator_correcao = (345,65)
     foto_ic_com_fator_correcao = foto_ic_com_fator_correcao.resize(dim_foto_ic_com_fator_correcao)
     st.image(foto_ic_com_fator_correcao)
 
