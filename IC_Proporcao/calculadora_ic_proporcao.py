@@ -228,7 +228,20 @@ elif pagina == "2. Breve teoria":
     st.write('''
     A população é finita quando:
     ''')
+
+    # Definição e plotagem da imagem do cálculo de população finita
     foto_pop_finita = Image.open('IC_Proporcao/pop_finita.png')
     dim_foto_pop_finita = (100,50)
     foto_pop_finita = foto_pop_finita.resize(dim_foto_pop_finita)
     st.image(foto_pop_finita)
+    
+    st.write('''
+    Nesse caso, usa-se a seguinte fórmula:
+    ''')
+
+    # Definição e plotagem da imagem do cálculo de IC com população finita
+    foto_ic_com_fator_correcao = Image.open('IC_Proporcao/ic_com_fator_correcao.jpg')
+    dim_foto_ic_com_fator_correcao = (100,50)
+    foto_ic_com_fator_correcao = foto_pop_finita.resize(dim_foto_ic_com_fator_correcao)
+    st.image(foto_ic_com_fator_correcao)
+    
