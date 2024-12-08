@@ -205,6 +205,7 @@ elif pagina == "2. Breve teoria":
 
     Exemplos:
 
-    * A partir de uma amostra inferirmos a inadimplência de uma população;
-    * A partir
+    * A partir de uma amostra, inferirmos a inadimplência de uma população;
+    * A partir de uma amostra, inferirmos a proporção de votos de um candidato a nível populacional;
+    * A partir de uma amostra, inferirmos a proporção de peças de uma produção estar danificada.
     ''')
