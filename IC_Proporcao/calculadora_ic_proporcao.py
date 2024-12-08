@@ -198,3 +198,4 @@ elif pagina == "2. Breve teoria":
     A partir da inadimplência de uma amostra, 
     podemos generalizar a mesma para a população, entendendo estatisticamente o nível de risco da totalidade desse público.
     ''')
+    st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Breve teoria</h1>", unsafe_allow_html=True)
