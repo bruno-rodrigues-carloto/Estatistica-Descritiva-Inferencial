@@ -200,8 +200,7 @@ elif pagina == "2. Breve teoria":
     ''')
     st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Breve teoria</h1>", unsafe_allow_html=True)
     st.write('''
-    A Estatística Inferencial é justamente, a partir de uma amostra, generalizarmos determinada estatística/proporção/probabilidade a uma população
-    que não temos acesso.
+    A Estatística Inferencial é a generalização de determinada estatística/proporção/probabilidade a uma população, a partir de uma amostra.
 
     Exemplos:
 
