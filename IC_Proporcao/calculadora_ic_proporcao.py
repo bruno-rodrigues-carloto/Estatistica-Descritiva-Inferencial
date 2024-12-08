@@ -34,7 +34,7 @@ if pagina == "1. Calculadora":
         st.write("")
     
     # Sinalizando quando a amostra for maior do que a população, pois denota incoerência
-    elif tamanho_amostra > tamanho_populacao:
+    elif (tamanho_amostra > 0 and tamanho_amostra > tamanho_populacao):
         st.write("ERRO: Amostra maior do que a população.")
     
     # Não havendo erro iniciamos a etapa de geração do intervalo   
