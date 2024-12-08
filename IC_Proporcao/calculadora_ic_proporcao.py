@@ -196,5 +196,5 @@ elif pagina == "2. Breve teoria":
     acerca da qual não temos performance para a todalidade, mas temos para uma proporção dela.
 
     A partir da inadimplência de uma amostra, 
-    podemos generalizar a inadimplência para a população, entendendo estatisticamente o nível de risco desse público se abrirmos, por exemplo, concessão de crédito.
+    podemos generalizar a mesma para a população, entendendo estatisticamente o nível de risco da totalidade desse público.
     ''')
