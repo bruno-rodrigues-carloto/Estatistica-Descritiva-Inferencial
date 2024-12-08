@@ -210,3 +210,6 @@ elif pagina == "2. Breve teoria":
     * A partir de uma amostra, inferirmos a proporção de peças de uma produção estar danificada.
     ''')
     st.markdown("<h1 style='font-size: 20px; color: gray; font-weight: bold;'>Premissas</h1>", unsafe_allow_html=True)
+    st.write('''
+    1. __n.p >= 5 e n.(1 - p) >= 5__
+    ''')
