@@ -3,9 +3,6 @@ import numpy as np
 from PIL import Image
 import streamlit as st
 
-# Apresentação da ferramenta
-st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Calculadora de Intervalo de Confiança de Proporção</h1>", unsafe_allow_html=True)
-
 # Informações pessoais e objetivo do projeto
 foto = Image.open('IC_Proporcao/bruno_carloto.jpg')
 st.sidebar.image(foto, use_column_width=True, width=50)
@@ -22,6 +19,9 @@ st.sidebar.markdown("<h1 style='font-size: 18px; color: gray; font-weight: bold;
 pagina = st.sidebar.selectbox("", ["1. Calculadora", "2. Breve teoria"])
 
 if pagina == "1. Calculadora":
+
+    # Apresentação da ferramenta
+    st.markdown("<h1 style='font-size: 24px; color: black; font-weight: bold;'>Calculadora de Intervalo de Confiança de Proporção</h1>", unsafe_allow_html=True)
     
     # Input das informações para inferência do intervalo de confiança
     tamanho_populacao = st.number_input("Insira o volume total da população, caso haja: ", min_value=0)
