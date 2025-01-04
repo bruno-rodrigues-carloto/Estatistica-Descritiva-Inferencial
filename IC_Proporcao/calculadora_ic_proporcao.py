@@ -5,7 +5,7 @@ import streamlit as st
 
 # Informações pessoais e objetivo do projeto
 foto = Image.open('IC_Proporcao/bruno_carloto.jpg')
-st.sidebar.image(foto, use_column_width=True, width=50)
+st.sidebar.image(foto, use_container_width=True, width=50)
 st.sidebar.subheader('Bruno Rodrigues Carloto')
 st.sidebar.markdown('Analista de dados e Política de Crédito')
 st.sidebar.markdown('#### Projeto de Estatística Inferencial - IC para proporção')
